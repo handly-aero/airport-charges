@@ -15,7 +15,9 @@
   "paths": {
     "/current": {
       "get": {
-        "operationId": "listCurrentCharges",
+        "Summary": "List current charges",
+		"Description": "List the current airport charges and fees",
+		"operationId": "listCurrentCharges",
         "parameters": [
           {
             "name": "apiKey",
@@ -86,7 +88,9 @@
     },
 	"/timely": {
       "get": {
-        "operationId": "listTimelyCharges",
+        "Summary": "List charges on date",
+		"Description": "List the airport charges and fees valid in a specific date",
+		"operationId": "listTimelyCharges",
         "parameters": [
           {
             "name": "apiKey",
