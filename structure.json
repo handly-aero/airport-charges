@@ -2,8 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "x-logo": {
-      "url": "https://static.wixstatic.com/media/737a3b_0e54bc444677415ca6b25262d8a4a74c~mv2.png",
-      "backgroundColor": "#FAFAFA"
+      "url": "https://static.wixstatic.com/media/737a3b_0e54bc444677415ca6b25262d8a4a74c~mv2.png"
     },
     "title": "Handly Airport Charges",
     "version": "0.0.1",
