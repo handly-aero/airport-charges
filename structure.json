@@ -1,6 +1,10 @@
 {
   "openapi": "3.0.0",
   "info": {
+    x-logo": {
+      "url": "https://static.wixstatic.com/media/737a3b_730744b453d34a11bd7e536903bc2e7f~mv2.png",
+      "backgroundColor": "#FAFAFA"
+    },
     "title": "Handly Airport Charges",
     "version": "0.0.1",
     "description": "The Handly API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer), particularly using the [JSON:API spec](https://jsonapi.org/). Our API has resource-oriented URLs, returns JSON responses and uses standard HTTP response codes and verbs.",
