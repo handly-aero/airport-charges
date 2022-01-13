@@ -3,6 +3,7 @@
   "info": {
     "version": "0.0.1",
     "title": "HandlyAirportCharges",
+    "description": "This API is intended to query airport charges and fees",
     "license": {
       "name": "MIT"
     }
@@ -16,8 +17,8 @@
     "/current": {
       "get": {
         "summary": "List current charges",
-	"description": "List the current airport charges and fees",
-	"operationId": "listCurrentCharges",
+        "description": "List the current airport charges and fees",
+        "operationId": "listCurrentCharges",
         "parameters": [
           {
             "name": "apiKey",
@@ -53,8 +54,8 @@
               }
             }
           },
-          "404": {
-            "description": "NotFound",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "application/json": {
                 "schema": {
@@ -63,7 +64,7 @@
               }
             }
           },
-		  "403": {
+          "403": {
             "description": "Forbidden",
             "content": {
               "application/json": {
@@ -73,8 +74,8 @@
               }
             }
           },
-		  "400": {
-            "description": "Bad Request",
+          "404": {
+            "description": "NotFound",
             "content": {
               "application/json": {
                 "schema": {
@@ -86,11 +87,11 @@
         }
       }
     },
-	"/timely": {
+    "/timely": {
       "get": {
         "summary": "List charges on date",
-	"description": "List the airport charges and fees valid in a specific date",
-	"operationId": "listTimelyCharges",
+        "description": "List the airport charges and fees valid in a specific date",
+        "operationId": "listTimelyCharges",
         "parameters": [
           {
             "name": "apiKey",
@@ -111,7 +112,7 @@
               "type": "string"
             }
           },
-		  {
+          {
             "name": "queryDate",
             "in": "query",
             "description": "Date of the intended operation",
@@ -135,8 +136,8 @@
               }
             }
           },
-          "404": {
-            "description": "NotFound",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "application/json": {
                 "schema": {
@@ -145,7 +146,7 @@
               }
             }
           },
-		  "403": {
+          "403": {
             "description": "Forbidden",
             "content": {
               "application/json": {
@@ -155,8 +156,8 @@
               }
             }
           },
-		  "400": {
-            "description": "Bad Request",
+          "404": {
+            "description": "NotFound",
             "content": {
               "application/json": {
                 "schema": {
