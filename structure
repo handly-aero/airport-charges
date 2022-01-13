@@ -1,0 +1,237 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "HandlyAirportCharges",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://handly.info/_functions/adCharges"
+    }
+  ],
+  "paths": {
+    "/current": {
+      "get": {
+        "operationId": "listCurrentCharges",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "query",
+            "description": "API key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          {
+            "name": "icao",
+            "in": "query",
+            "description": "Airpot ICAO code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/arrayOfCharges"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NotFound",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorMsg"
+                }
+              }
+            }
+          },
+		  "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorMsg"
+                }
+              }
+            }
+          },
+		  "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorMsg"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+	"/timely": {
+      "get": {
+        "operationId": "listTimelyCharges",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "query",
+            "description": "API key",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "byte"
+            }
+          },
+          {
+            "name": "icao",
+            "in": "query",
+            "description": "Airpot ICAO code",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+		  {
+            "name": "queryDate",
+            "in": "query",
+            "description": "Date of the intended operation",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/arrayOfCharges"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NotFound",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorMsg"
+                }
+              }
+            }
+          },
+		  "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorMsg"
+                }
+              }
+            }
+          },
+		  "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/errorMsg"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "arrayOfCharges": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "queryDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "effectiveDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "icao": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "nat": {
+            "type": "string"
+          },
+          "chargename": {
+            "type": "string"
+          },
+          "formula": {
+            "type": "string"
+          },
+          "fixvalue": {
+            "type": "number",
+            "format": "float"
+          },
+          "varvalue": {
+            "type": "number",
+            "format": "float"
+          },
+          "upband": {
+            "type": "integer"
+          },
+          "charge": {
+            "type": "number",
+            "format": "float"
+          }
+        }
+      },
+      "errorMsg": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
