@@ -7,6 +7,9 @@
     "title": "Handly Airport Charges",
     "version": "0.0.1",
     "description": "The Handly API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer), particularly using the [JSON:API spec](https://jsonapi.org/). Our API has resource-oriented URLs, returns JSON responses and uses standard HTTP response codes and verbs.",
+    "contact": {
+      "email": "handly.aero@gmail.com"
+    },
     "license": {
       "name": "MIT",
       "url": "https://opensource.org/licenses/MIT"
@@ -21,8 +24,9 @@
     "/current": {
       "get": {
         "summary": "List current charges",
-        "description": "List the current airport charges and fees",
+        "description": "\"List current charges\" returns the current charges and fees for a specific aerodrome. Current charges and fees are the airport charges and fees (“tarifas aeroportuárias”) in effect, due to any aircraft operation, for the specified aerodrome. If the aerodrome operator has published new charges and fees but the effective date is later than the api call date (queryDate), then the response will not return the new charges. This path will continue to return effective charges and fees until the new effect date comes.",
         "operationId": "listCurrentCharges",
+        "tags": [],
         "parameters": [
           {
             "name": "apiKey",
@@ -54,6 +58,238 @@
                   "items": {
                     "$ref": "#/components/schemas/arrayOfCharges"
                   }
+                },
+                "examples": {
+                  "example": {
+                    "value": [{
+                      "charges": [
+                        {
+                          "id": "1095SBFL001",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "I",
+                          "nat": "dom",
+                          "chargename": "Boarding",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 38.38,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL002",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "I",
+                          "nat": "intl",
+                          "chargename": "Boarding",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 67.96,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL003",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "I",
+                          "nat": "dom",
+                          "chargename": "Connection",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 11.74,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL004",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "I",
+                          "nat": "intl",
+                          "chargename": "Connection",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 11.74,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL005",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "I",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 12.0183,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL006",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "I",
+                          "nat": "dom",
+                          "chargename": "ShortStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 2.3704,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL007",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "I",
+                          "nat": "dom",
+                          "chargename": "LongStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0.5078,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL008",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "I",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 32.04,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL009",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "I",
+                          "nat": "intl",
+                          "chargename": "ShortStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 6.3849,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL010",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "I",
+                          "nat": "intl",
+                          "chargename": "LongStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 1.3061,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL077",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "abx",
+                          "fixvalue": 196.73,
+                          "varvalue": 44.65,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL078",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "ShortStay",
+                          "formula": "abx",
+                          "fixvalue": 32.5338,
+                          "varvalue": 1.4469,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL079",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "LongStay",
+                          "formula": "abx",
+                          "fixvalue": 2.1477,
+                          "varvalue": 0.3186,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL080",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "abx",
+                          "fixvalue": 283.14,
+                          "varvalue": 142.78,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL081",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "ShortStay",
+                          "formula": "abx",
+                          "fixvalue": 46.9441,
+                          "varvalue": 4.3646,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1095SBFL082",
+                          "queryDate": "2022-01-13T23:00:15.255Z",
+                          "effectiveDate": "2020-12-18T00:00:00.000Z",
+                          "icao": "SBFL",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "LongStay",
+                          "formula": "abx",
+                          "fixvalue": 3.0909,
+                          "varvalue": 1.0935,
+                          "upband": 0,
+                          "charge": 0
+                        }
+                      ]
+                    }]
+                  }
                 }
               }
             }
@@ -64,6 +300,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/errorMsg"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": {
+                        "type": "Bad Request",
+                        "message": "The request path '/time' was not recognized. Please, check the API documentation",
+                        "code": 400
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -74,6 +321,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/errorMsg"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": {
+                        "type": "Forbidden",
+                        "message": "'550c66847abcd0a2f0704cce2fc52ca7' is an incorrect apiKey. Please, verify your apiKey and resubmit",
+                        "code": 403
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -84,6 +342,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/errorMsg"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": {
+                        "type": "Not Found",
+                        "message": "No charges were found for 'SBAB'",
+                        "code": 404
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -94,8 +363,9 @@
     "/timely": {
       "get": {
         "summary": "List charges on date",
-        "description": "List the airport charges and fees valid in a specific date",
+        "description": "\"List charges on date\" returns the charges and fees for a specific aerodrome, on a specific date. Charges and fees are the airport charges and fees (“tarifas aeroportuárias”) in effect on the specified date (queryDate), for the specified aerodrome. It does include new charges and fees, already announced by the aerodrome operator, that shall come into effect later than the api call date. ",
         "operationId": "listTimelyCharges",
+        "tags": [],
         "parameters": [
           {
             "name": "apiKey",
@@ -136,6 +406,518 @@
                   "items": {
                     "$ref": "#/components/schemas/arrayOfCharges"
                   }
+                },
+                "examples": {
+                  "example": {
+                    "value": [{
+                      "charges": [
+                        {
+                          "id": "1119SBMS001",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "I",
+                          "nat": "dom",
+                          "chargename": "Boarding",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 14.07,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS002",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "I",
+                          "nat": "intl",
+                          "chargename": "Boarding",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS003",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "I",
+                          "nat": "dom",
+                          "chargename": "Connection",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 4.1,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS004",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "I",
+                          "nat": "intl",
+                          "chargename": "Connection",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS005",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "I",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 2.86,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS006",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "I",
+                          "nat": "dom",
+                          "chargename": "ShortStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0.5714,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS007",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "I",
+                          "nat": "dom",
+                          "chargename": "LongStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0.5714,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS008",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "I",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS009",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "I",
+                          "nat": "intl",
+                          "chargename": "ShortStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS010",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "I",
+                          "nat": "intl",
+                          "chargename": "LongStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS011",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 1,
+                          "charge": 31.31
+                        },
+                        {
+                          "id": "1119SBMS012",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 2,
+                          "charge": 44.82
+                        },
+                        {
+                          "id": "1119SBMS013",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 4,
+                          "charge": 76.74
+                        },
+                        {
+                          "id": "1119SBMS014",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 6,
+                          "charge": 156.36
+                        },
+                        {
+                          "id": "1119SBMS015",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 12,
+                          "charge": 200.18
+                        },
+                        {
+                          "id": "1119SBMS016",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 24,
+                          "charge": 459.15
+                        },
+                        {
+                          "id": "1119SBMS017",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 48,
+                          "charge": 1191.34
+                        },
+                        {
+                          "id": "1119SBMS018",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 100,
+                          "charge": 1191.34
+                        },
+                        {
+                          "id": "1119SBMS019",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 200,
+                          "charge": 1191.34
+                        },
+                        {
+                          "id": "1119SBMS020",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 300,
+                          "charge": 1191.34
+                        },
+                        {
+                          "id": "1119SBMS021",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 999,
+                          "charge": 1191.34
+                        },
+                        {
+                          "id": "1119SBMS022",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 1,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS023",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 2,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS024",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 4,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS025",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 6,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS026",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 12,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS027",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 24,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS028",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 48,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS029",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 100,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS030",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 200,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS031",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 300,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS032",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "Landing",
+                          "formula": "band",
+                          "fixvalue": 0,
+                          "varvalue": 0,
+                          "upband": 999,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS078",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "ShortStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0.5714,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS079",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "dom",
+                          "chargename": "LongStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0.5714,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS081",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "ShortStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0.5714,
+                          "upband": 0,
+                          "charge": 0
+                        },
+                        {
+                          "id": "1119SBMS082",
+                          "queryDate": "2022-01-30T00:00:00.000Z",
+                          "effectiveDate": "2020-01-23T00:00:00.000Z",
+                          "icao": "SBMS",
+                          "group": "II",
+                          "nat": "intl",
+                          "chargename": "LongStay",
+                          "formula": "abx",
+                          "fixvalue": 0,
+                          "varvalue": 0.5714,
+                          "upband": 0,
+                          "charge": 0
+                        }
+                      ]
+                    }]
+                  }
                 }
               }
             }
@@ -146,6 +928,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/errorMsg"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": {
+                        "type": "Bad Request",
+                        "message": "The request path '/time' was not recognized. Please, check the API documentation",
+                        "code": 400
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -156,6 +949,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/errorMsg"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": {
+                        "type": "Forbidden",
+                        "message": "'550c66847abcd0a2f0704cce2fc52ca7' is an incorrect apiKey. Please, verify your apiKey and resubmit",
+                        "code": 403
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -166,6 +970,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/errorMsg"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "error": {
+                        "type": "Not Found",
+                        "message": "No charges were found for 'SBSP' for the selected queryDate '2022-12-25'",
+                        "code": 404
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -220,7 +1035,38 @@
             "type": "number",
             "format": "float"
           }
-        }
+        },
+        "x-examples": {
+          "example 1": {
+            "id": "1050SBBR015",
+            "queryDate": "2020-11-13T22:54:02.800Z",
+            "effectiveDate": "2020-08-22T00:00:00.000Z",
+            "icao": "SBBR",
+            "group": "II",
+            "nat": "dom",
+            "chargename": "Landing",
+            "formula": "band",
+            "fixvalue": 0,
+            "varvalue": 0,
+            "upband": 12,
+            "charge": 517.38
+          },
+          "example 2": {
+            "id": "1095SBFL081",
+            "queryDate": "2021-02-13T22:54:02.800Z",
+            "effectiveDate": "2020-12-18T00:00:00.000Z",
+            "icao": "SBFL",
+            "group": "II",
+            "nat": "intl",
+            "chargename": "ShortStay",
+            "formula": "abx",
+            "fixvalue": 46.9441,
+            "varvalue": 4.3646,
+            "upband": 0,
+            "charge": 0
+          }
+        },
+        "description": ""
       },
       "errorMsg": {
         "type": "object",
