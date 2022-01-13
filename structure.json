@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
+    "title": "Handly Airport Charges",
     "version": "0.0.1",
-    "title": "HandlyAirportCharges",
-    "description": "This API is intended to query airport charges and fees",
+    "description": "The Handly API is organized around [REST] (https://en.wikipedia.org/wiki/Representational_state_transfer), particularly using the [JSON:API spec](https://jsonapi.org/). Our API has resource-oriented URLs, returns JSON responses and uses standard HTTP response codes and verbs.",
     "license": {
       "name": "MIT"
     }
