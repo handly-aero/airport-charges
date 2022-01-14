@@ -42,7 +42,7 @@
     "/current": {
       "get": {
         "summary": "List current charges",
-        "description": "\"List current charges\" returns the current charges and fees for a specific aerodrome. Current charges and fees are the airport charges and fees (“tarifas aeroportuárias”) in effect, due to any aircraft operation, for the specified aerodrome. If the aerodrome operator has published new charges and fees but the effective date is later than the api call date (queryDate), then the response will not return the new charges. This path will continue to return effective charges and fees until the new effect date comes.",
+        "description": "\"List current charges\" returns the current charges and fees for a specific aerodrome. Current charges and fees are the airport charges and fees (“tarifas aeroportuárias”) in effect, for the specified aerodrome. If the aerodrome operator has published new charges and fees but the effective date is later than the api call date (queryDate), then the response will not return the new charges. This path will continue to return effective charges and fees until the new effect date comes.",
         "operationId": "listCurrentCharges",
         "parameters": [
           {
@@ -385,7 +385,7 @@
     "/timely": {
       "get": {
         "summary": "List charges on date",
-        "description": "\"List charges on date\" returns the charges and fees for a specific aerodrome, on a specific date. Charges and fees are the airport charges and fees (“tarifas aeroportuárias”) in effect on the specified date (queryDate), for the specified aerodrome. It does include new charges and fees, already announced by the aerodrome operator, that shall come into effect later than the api call date. ",
+        "description": "\"List charges on date\" returns the charges and fees for a specific aerodrome, on a specific date. Charges and fees are the airport charges and fees (“tarifas aeroportuárias”) in effect on the specified date (queryDate), for the specified aerodrome. If future date, the response may include new charges and fees, announced by the aerodrome operator, that shall be in effect in the specified date. ",
         "operationId": "listTimelyCharges",
         "parameters": [
           {
@@ -1159,13 +1159,16 @@
             "type": "object",
             "properties": {
               "type": {
-                "type": "string"
+                "type": "string",
+                "description": "The phrase related to the HTTP response status code."
               },
               "message": {
-                "type": "string"
+                "type": "string",
+                "description": "The message which explains the response."
               },
               "code": {
-                "type": "integer"
+                "type": "integer",
+                "description": "HTTP response status code."
               }
             }
           }
