@@ -6,7 +6,7 @@
     },
     "title": "Handly API",
     "version": "1.0",
-    "description": "The Handly API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer), particularly using the [JSON:API spec](https://jsonapi.org/). Our API has resource-oriented URLs, returns JSON responses and uses standard HTTP response codes and verbs.",
+    "description": "The Handly API is organized around [REST](https://en.wikipedia.org/wiki/Representational_state_transfer), particularly using the [JSON:API spec](https://jsonapi.org/). Our API has resource-oriented URLs, returns JSON responses and uses standard HTTP response codes and verbs.\n\n# Introduction\n\nThe Handly API is divided into separate use cases.\n\n[Airport](#x-tagGroups/Airport) which provides endpoints to be used with airport related information, such as airport charges and fees.\n\n[Service Providers](#x-tagGroups/Service-Providers) which provides endpoints to be used with services related information, such as providers, services, products and prices.",
     "contact": {
       "email": "handly.aero@gmail.com"
     },
