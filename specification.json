@@ -1077,7 +1077,7 @@
             "type": "string",
             "description": "The type of fee or charge.",
             "enum": [
-              "Boarding\t - Tarifa de Embarque",
+              "Boarding - Tarifa de Embarque",
               "Connection - Tarifa de Conexão",
               "Landing - Tarifa de Pouso",
               "ShortStay - Tarifa de Permanência no Pátio de Manobras",
