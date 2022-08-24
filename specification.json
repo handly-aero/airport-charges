@@ -17,7 +17,7 @@
   },
   "servers": [
     {
-      "url": "https://handly.info/_functions/adCharges"
+      "url": "https://handly.live/_functions/adCharges"
     }
   ],
   "tags": [
